@@ -39,9 +39,9 @@ void quick_sort_range_lomuto(int *array, size_t low, size_t high, size_t size)
 	y = low;
 	for (a = low; a < high; a++)
 	{
-		if (array[i] <= pivot)
+		if (array[a] <= pivot)
 		{
-			if (k != a)
+			if (y != a)
 			{
 				swap_items(array, y, a);
 				print_array(array, size);
