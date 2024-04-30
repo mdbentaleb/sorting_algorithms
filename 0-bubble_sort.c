@@ -2,33 +2,33 @@
 #include <stdio.h>
 
 /**
- * bubble_sort - function that sorts a doubly linked list
- *	of integers in ascending order using the In
+ * bubble_sort - function that sorts an array of integers
+ *	in ascending order using the Bubble sort algorithm
  * @array: array of int
- * @size: size of the array
+ * @size: size of array
  * Return: void
  */
 void bubble_sort(int *array, size_t size)
 {
-	size_t x, j;
-	int tmp;
+	size_t l;
+	int tmp, sor;
 
 	if (!array || size == 0)
 		return;
 
-	x = 0;
-	while (x < size)
-	{
-		for (j = 0; j < size - 1; j++)
+	do {
+		sor = 1;
+		for (l = 0; l < size - 1; l++)
 		{
-			if (array[j] > array[j + 1])
+			if (array[l] > array[l + 1])
 			{
-				tmp = array[j];
-				array[j] = array[j + 1];
-				array[j + 1] = tmp;
+				sor = 0;
+				tmp = array[l];
+				array[l] = array[l + 1];
+				array[l + 1] = tmp;
 				print_array(array, size);
 			}
 		}
-		x++;
-	}
+
+	} while (sor == 0);
 }
